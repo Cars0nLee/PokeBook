@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+table {
+	text-align: center;
+	border: 3px solid black;
+	width: 500px;
+	height: 150px;
+	margin: auto;
+}
+
+h1{
+	text-align: center;
+}
+
+#expense {
+	margin-top: 75px;
+	margin-left: 50px;
+}
+
+#form {
+	display: flex;
+	justify-content: center;
+	margin-top: -100px;
+}
+
+form {
+	text-align: right;
+}
+
+.submit {
+	text-align: center;
+	margin-left: 50px;
+}
