@@ -24,6 +24,14 @@ public class PokeBookController {
 		this.pokeServ = pokeServ;
 	}
 	
+	///// View route
+	@RequestMapping("/view/{id}")
+	public String view(@PathVariable("id") Long id, Model model) {
+		Expense expense = pokeServ.findExpense(id);
+		model.addAttribute("expense", expense);
+		return "view.jsp";
+	}
+
 	///// Create routes
 	@RequestMapping("/")
 	public String newExpense(@ModelAttribute("expense") Expense expense, Model model) {
@@ -64,6 +72,13 @@ public class PokeBookController {
 			pokeServ.create(expense);
 			return "redirect:/";
 		}
+	}
+	
+	///// Delete route
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.DELETE)
+		public String delete(@PathVariable("id") Long id) {
+			pokeServ.delete(id);
+			return "redirect:/";
 	}
 }
 

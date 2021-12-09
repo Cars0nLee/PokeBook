@@ -3,8 +3,8 @@
 table {
 	text-align: center;
 	border: 3px solid black;
-	width: 500px;
-	height: 150px;
+	width: 550px;
+	height: 200px;
 	margin: auto;
 }
 
@@ -30,4 +30,8 @@ form {
 .submit {
 	text-align: center;
 	margin-left: 50px;
+}
+
+#delete {
+	margin:auto;
 }

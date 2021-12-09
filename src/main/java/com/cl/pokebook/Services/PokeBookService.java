@@ -35,5 +35,8 @@ public class PokeBookService {
 		}
 	}
 	
+	public void delete(Long id) {
+		repo.deleteById(id);
+	}
 }
 

@@ -22,20 +22,29 @@
 			<th>Expense</th>
 			<th>Vendor</th>
 			<th>Amount</th>
-			<th>Actions</tr>
-		<tr>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
 		<c:forEach var="i" items="${expenses}">
 		<tr>
 			<td><a href="http://localhost:8080/view/${i.id}"><c:out value="${i.exp}" /></a></td>
 			<td><c:out value="${i.vendor}" /></td>
 			<td>$<c:out value="${i.amount}" /></td>
-			<td><a href="http://localhost:8080/edit/${i.id}" >Edit</a></td>
+			<td>
+				<a href="http://localhost:8080/edit/${i.id}" >Edit</a>
+			</td>
+			<td>
+				<form action="/delete/${i.id}" method="POST">
+					<input type="hidden" name="_method" value="delete">
+					<input type="submit" value="Delete">
+				</form>
+			</td>
 		</tr>
 		</c:forEach>
 	</table>
 
 	<h1 id="expense">Track an expense:</h1>
-	
+
 	<div id="form">
 		<form:form action="/create" method="POST" modelAttribute="expense">
 			<p>
